@@ -44,6 +44,30 @@ Giải nén file vừa tải về và chuyển vào thư mục bin/
 - Đối với Linux thì chỉ cần chạy file jmeter.sh
 
 Giao diện chính của chương trình: 
-![img](http://prntscr.com/4dxyej "img")
+
+<img src=http://i.imgur.com/U3DfbXB.png border="1">
+
+Trước khi bắt đầu test ta cần lập một Test Plan để JMeter thực hiện. Có một vài thông số quan trọng trong JMeter như Thread Groups, Listeners, Assertions, Sample Generating Controller, Logic Controllers,… Những thông số này sẽ được mô tả dưới bảng sau:
+
+| Thành phần   | Mục đích |
+| -------------|----------------|
+| Samples | Những phần tử này gửi các yêu cầu tới server. Có những samplers cho những kiểu request: HTTP/HTTPS, FTP, SOAP, JDBC, "Java", LDAP, MongoDB, TCP,… |
+| Listeners Timers | Tập các kết quả của việc run test, cung cấp cho người dùng các công cụ hiển thị một cách trực quan, dễ hiểu |
+| Logic Controllers | Nếu những request được định nghĩa trong các test plan của bạn được thực thi dựa phụ thuộc vào một vài logic, lúc đó sẽ cần đến Logic Controllers. Chúng thích hợp với cấu trúc if-then-else và loop trong Java hay các ngôn ngữ khác. |
+| Configuration Elements | Chúng làm việc với Samples bằng cách thêm những thông tin chung với những Request |
+| Assertions | Cho phép bạn kiểm tra nếu responses bạn lấy chứa dữ liệu mong đợi hay nhận trong phạm vi thời gian đã định sẵn |
+
+Một điều cần lưu ý đó là mọi Test Plan đều cần ít nhất một Thread Groups. Do mỗi Thread Groups sẽ tạo ra được các yêu cầu để gứi tới server, nếu không có Thread Groups thì không có yêu cầu nào được gửi nên không thể tiến hành việc test.
+
+Với mỗi mục đích kiểm thử khác nhau thì sẽ xây dựng các Test Plan khác nhau, tránh trường hợp chúng ta thêm tất cả các thành phần vào Test Plan. Điều đó sẽ làm “rối” và có các thành phần không được sử dụng đến gây lãng phí tài nguyên. Mỗi Test Plan cần có ít nhất hai thành phần chính trong Thread Groups là một Sampler để tạo các request và một Listeners để hiển thị kết quả cho người dùng.
+
+Do JMeter có rất nhiều chức năng như đã trình bày ở trên nên rất khó có thể trình bày hết trong một sớm một chiều được. Tôi xin phép được trình bày những kiến thức học được dưới một ví dụ cụ thể dưới đây.
+
+## Ví dụ sử dụng JMeter kiểm thử hiệu năng Website
+
+#### Mô hình kiểm thử
+
+#### Quá trình thực hiện
+
 ## Tài liệu tham khảo
 
