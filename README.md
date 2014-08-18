@@ -90,11 +90,7 @@ Giao diện Website:
 #### 3.2. Kịch bản kiểm thử
 
 - Test với một user truy cập web (không đăng nhập)
-- Test với 10 user đăng nhập vào web và thực hiện các chức năng sau:
-
-    Đăng nhập
-    Liệt kê danh mục
-    Liệt kê văn bản
+- Test với 10 user đăng nhập vào web và thực hiện các chức năng: Đăng nhập, Liệt kê danh mục, Liệt kê văn bản
  
 #### 3.3. Quá trình thực hiện
 
@@ -140,11 +136,44 @@ Các Listener tôi sử dụng:
 
 ###### Chạy ứng dụng
 
-Sau khi đã khai báo các tham số của JMeter bên trên, ta click vào Run, Start hoặc tổ hợp phím Ctrl + R để chạy ứng dụng.
+Sau khi đã khai báo các tham số của JMeter bên trên, ta click vào Run, Start hoặc tổ hợp phím Ctrl + R để chạy ứng dụng, sau đó click vào các Listener để xem kết quả.
 
+##### 3.3.2. Test với 10 users đăng nhập và thực hiện các chức năng
 
+###### Khai báo thông số của JMeter
 
+Các thông số ta khai báo tương tự như đối với mục 3.3.1 nhưng cần thêm những tham số như hình sau (cần sắp xếp đúng thứ tự):
+- HTTP Cache Manager
+- HTTP Cookie Manager
+- CSV Data Set Config
 
+Đối với HTTP Request để Login vào trang web cần chú ý đến các Parameters. Các Parameters này cần điền giống như trang Login thật của website (các Parameters này có thể dùng addon Firebug trên trình duyệt FireFox để tìm)
+<img src=http://i.imgur.com/LU3Bvvm.png>
+
+Với CSV Data Set Config trong Login HTTP Request ta cần khai báo đến file csv chứa các tài khoản dùng để đăng nhập vào trang web. Chi tiết như hình sau:
+<img src=http://i.imgur.com/Y0PvAaW.png>
+
+Thêm các hành động sau khi Login thành công bằng cách tạo thêm các HTTP Request (danh mục, văn bản,...)
+
+Hành động liệt kê danh mục
+<img src=http://i.imgur.com/eRVhH2u.png>
+
+Hành động liệt kê văn bản
+<img src=http://i.imgur.com/6CVuEg3.png>
+
+###### Chạy ứng dụng
+
+Chạy ứng dụng tương tự như mục 3.3.1.
+
+Quan sát các kết quả thu được tại Listener.
+
+Summary Report
+<img src=http://i.imgur.com/waGvVbf.png>
 
 ## Tài liệu tham khảo
 
+    http://jmeter.apache.org/
+    http://jmeter.apache.org/usermanual/index.html
+    https://www.digitalocean.com/community/tutorials/how-to-use-apache-jmeter-to-perform-load-testing-on-a-web-server
+    https://google.com.vn
+    http://www.tutorialspoint.com/jmeter/jmeter_overview.htm
