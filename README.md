@@ -43,8 +43,7 @@ Giải nén file vừa tải về và chuyển vào thư mục bin/
 - Đối với Windows thì chỉ cần chạy file jmeter.bat
 - Đối với Linux thì chỉ cần chạy file jmeter.sh
 
-Giao diện chính của chương trình:
-![alt text](http://my.metadata.vn/share/s/HUknyPyxQfmhd3BRjYJuFQ/Jmeter_giao_dien.png "Logo Title Text 1") 
-
+Giao diện chính của chương trình: 
+![img](http://my.metadata.vn/share/s/HUknyPyxQfmhd3BRjYJuFQ/Jmeter_giao_dien.png "img")
 ## Tài liệu tham khảo
 
