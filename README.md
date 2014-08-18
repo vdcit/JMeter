@@ -168,6 +168,7 @@ Chạy ứng dụng tương tự như mục 3.3.1.
 Quan sát các kết quả thu được tại Listener.
 
 Summary Report
+
 <img src=http://i.imgur.com/waGvVbf.png>
 
 ## Tài liệu tham khảo
