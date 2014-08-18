@@ -44,6 +44,6 @@ Giải nén file vừa tải về và chuyển vào thư mục bin/
 - Đối với Linux thì chỉ cần chạy file jmeter.sh
 
 Giao diện chính của chương trình: 
-![img](http://my.metadata.vn/share/s/HUknyPyxQfmhd3BRjYJuFQ/Jmeter_giao_dien.png "img")
+![img](http://prntscr.com/4dxyej "img")
 ## Tài liệu tham khảo
 
