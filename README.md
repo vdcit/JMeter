@@ -1,25 +1,17 @@
 JMeter
 ======
 
-Hướng dẫn sử dụng JMeter
+Bài lab sử dụng công cụ JMeter test hiệu năng website
 
-## 1. Giới thiệu
+## 1. Giới thiệu công cụ Apache JMeter
+
+### 1.1. Apache JMeter là gì?
 
 Apache JMeter là một phần mềm nguồn mở được viết bằng Java nhằm mục đích kiểm thử chức năng và hiệu suất. Mục đích ban đầu JMeter được thiết kế chỉ để kiểm thử các ứng dụng web nhưng hiện nay nó đã được mở rộng thêm nhiều chức năng khác.
 
 Cha đẻ của JMeter là Stefano Mazzocchi, một lâp trình viên tại Apache Software Foundation. Ông ta viết JMeter với mục đích là kiểm thử hiệu năng của Apache JServ (bây giờ là Apache Tomcat). Sau đó Apache đã thiết kế lại để cải tiến hơn giao diện đồ họa cho người dùng và khả năng kiểm thử hướng chức năng.
 
 Nó là một ứng dụng Java với phần dao diện sử dụng Java Swing, do đó nó có thể chạy được trên mọi nền tảng có hỗ trợ JVM, ví dụ như Windows, Linux, Mac,…
-
-Các giao thức mà JMeter hỗ trợ:
-- Web: HTTP, HTTPS sites 'web 1.0' web 2.0 (ajax, flex and flex-ws-amf)
-- Web Services: SOAP / XML-RPC
-- Database: JDBC
-- Directory: LDAP
-- Messaging Oriented service: JMS
-- Service: POP3(s), IMAP(s), SMTP(s)
-- TCP
-- MongoDB (NoSQL)
 
 Các tính năng nổi bật của JMeter:
 - Nguồn mở, miễn phí
@@ -33,9 +25,29 @@ Các tính năng nổi bật của JMeter:
 
 Cách thức hoạt động: nó giả lập một nhóm người dùng gửi các yêu cầu tới một máy chủ mục tiêu, nhận và xử lý các response từ máy chủ và trình diễn các kết quả đó cho người dùng dưới dạng bảng biểu, đồ thị,…
 
-## 2. Hướng dẫn sử dụng
+### 1.2. Phạm vi ứng dụng của JMeter
+
+Cùng chức năng Load testing còn có rất nhiều công cụ khác như NeoLoad, LoadRunner, Appvance,... Trong đó thì công cụ LoadRunner là nổi tiếng hơn hẳn, nhưng so với JMeter thì nó còn có một số hạn chế như sau:
+- Chỉ sử dụng được trên Windows
+- Không miễn phí
+- Chỉ hỗ trợ giao thức nền HTTP
+
+JMeter thì nổi trội hơn do hỗ trợ rất nhiều các giao thức như:
+- Web: HTTP, HTTPS sites 'web 1.0' web 2.0 (ajax, flex and flex-ws-amf)
+- Web Services: SOAP / XML-RPC
+- Database: JDBC
+- Directory: LDAP
+- Messaging Oriented service: JMS
+- Service: POP3(s), IMAP(s), SMTP(s)
+- TCP
+- MongoDB (NoSQL)
+
+
+### 1.3. Hướng dẫn sử dụng
 
 Đầu tiên ta cần cài đặt java cho hệ điều hành đang sử dụng: Windows, Linux, MacOS,...
+- [Cài đặt Java 7 cho Windows] (http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jdk-installation-windows.html)
+- [Cài đặt Java 7 cho Linux] (http://docs.oracle.com/javase/7/docs/webnotes/install/linux/linux-jdk.html)
 
 Tiếp theo ta tải mã nguồn của chương trình về tại [địa chỉ](http://jmeter.apache.org/download_jmeter.cgi)
 
@@ -61,14 +73,19 @@ Một điều cần lưu ý đó là mọi Test Plan đều cần ít nhất m�
 
 Với mỗi mục đích kiểm thử khác nhau thì sẽ xây dựng các Test Plan khác nhau, tránh trường hợp chúng ta thêm tất cả các thành phần vào Test Plan. Điều đó sẽ làm “rối” và có các thành phần không được sử dụng đến gây lãng phí tài nguyên. Mỗi Test Plan cần có ít nhất hai thành phần chính trong Thread Groups là một Sampler để tạo các request và một Listeners để hiển thị kết quả cho người dùng.
 
-Do JMeter có rất nhiều chức năng như đã trình bày ở trên nên rất khó có thể trình bày hết trong một sớm một chiều được. Tôi xin phép được trình bày những kiến thức học được dưới một ví dụ cụ thể dưới đây.
+Do JMeter có rất nhiều chức năng như đã trình bày ở trên nên rất khó có thể trình bày hết trong một sớm một chiều được. Tôi xin phép được trình bày những kiến thức học được dưới một ví dụ cụ thể dưới đây (xem phần 2).
 
-## 3. Ví dụ sử dụng JMeter kiểm thử hiệu năng Website
 
-#### 3.1. Mô hình kiểm thử
+## 2. Bài lab sử dụng công cụ JMeter test hiệu năng một trang web 
+
+### 2.1. Mục tiêu bài Lab
+
+Kiểm thử hiệu năng một trang web
+
+### 2.2. Mô hình bài Lab
 
     --------------                  ----------------
-    |   TestPC   |- ----------------|  Web Server  |
+    |   TestPC   |------------------|  Web Server  |
     --------------                  ----------------
      172.16.69.140                   172.16.69.122
 
@@ -87,14 +104,14 @@ Web Server:
 Giao diện Website:
 <img src=http://i.imgur.com/GQ2Kkj1.png>
 
-#### 3.2. Kịch bản kiểm thử
+### 2.3. Kịch bản kiểm thử
 
-- Test với một user truy cập web (không đăng nhập)
-- Test với 10 user đăng nhập vào web và thực hiện các chức năng: Đăng nhập, Liệt kê danh mục, Liệt kê văn bản
+- Test một hoặc nhiều user truy cập web (không đăng nhập)
+- Test với 10 user đăng nhập vào web và thực hiện các chức năng: Đăng nhập, Liệt kê danh mục, Liệt kê văn bản (số lượng 10 user có thể thay đổi)
  
-#### 3.3. Quá trình thực hiện
+### 2.4. Quá trình thực hiện
 
-##### 3.3.1. Test với một user truy cập web (không đăng nhập)
+##### 2.4.1. Test với một user truy cập web (không đăng nhập)
 
 ###### Khai báo thông số của JMeter
 
@@ -138,7 +155,7 @@ Các Listener tôi sử dụng:
 
 Sau khi đã khai báo các tham số của JMeter bên trên, ta click vào Run, Start hoặc tổ hợp phím Ctrl + R để chạy ứng dụng, sau đó click vào các Listener để xem kết quả.
 
-##### 3.3.2. Test với 10 users đăng nhập và thực hiện các chức năng
+##### 2.4.2. Test với 10 users đăng nhập và thực hiện các chức năng
 
 ###### Khai báo thông số của JMeter
 
@@ -161,9 +178,11 @@ Hành động liệt kê danh mục
 Hành động liệt kê văn bản
 <img src=http://i.imgur.com/6CVuEg3.png>
 
+***CHÚ Ý***: Ta có thể giả lập số user kết nối vào website bằng cách thay đổi các tham biến trong Thread group element, không nhất thiết là chỉ có 10 user
+
 ###### Chạy ứng dụng
 
-Chạy ứng dụng tương tự như mục 3.3.1.
+Chạy ứng dụng tương tự như mục 2.4.1.
 
 Quan sát các kết quả thu được tại Listener.
 
