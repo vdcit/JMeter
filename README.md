@@ -190,7 +190,7 @@ Summary Report
 
 <img src=http://i.imgur.com/waGvVbf.png>
 
-## 4. Tài liệu tham khảo
+## Tài liệu tham khảo
 
     http://jmeter.apache.org/
     http://jmeter.apache.org/usermanual/index.html
