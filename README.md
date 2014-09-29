@@ -57,7 +57,7 @@ Giải nén file vừa tải về và chuyển vào thư mục bin/
 
 Giao diện chính của chương trình: 
 
-<img src=http://i.imgur.com/U3DfbXB.png border="1">
+<img src= border="1">
 
 Trước khi bắt đầu test ta cần lập một Test Plan để JMeter thực hiện. Có một vài thông số quan trọng trong JMeter như Thread Groups, Listeners, Assertions, Sample Generating Controller, Logic Controllers,… Những thông số này sẽ được mô tả dưới bảng sau:
 
@@ -102,7 +102,7 @@ Web Server:
     Cài đặt Website để thử nghiệm
 
 Giao diện Website:
-<img src=http://i.imgur.com/GQ2Kkj1.png>
+<img src=>
 
 ### 2.3. Kịch bản kiểm thử
 
@@ -116,10 +116,10 @@ Giao diện Website:
 ###### Khai báo thông số của JMeter
 
 Tạo một thread group bằng cách click chuột phải vào Test plan, sau đó chọn ADD rồi chọn Thread group option. Sau khi chọn Thread group option thì một thread group element sẽ được sinh ra. Căn cứ vào đó chúng ta sẽ giả lập được số lượng người test và số lần test plan được lặp lại. 
-<img src=http://i.imgur.com/gxN7mNU.png>
+<img src=>
 
 Thread group element
-<img src=http://i.imgur.com/26U5twM.png>
+<img src=>
 
 - Name: Tên của Thread, có thể tạo tên bất kỳ để dễ phân biệt
 - Number of Threads: số các thread được giả lập, mỗi thread giả lập tương đương với một user. Ví dụ nếu để tham số này là 10 thì tương đương với đó sẽ là 10 user được giả lập để gửi các request.
@@ -128,7 +128,7 @@ Thread group element
 - Ngoài ra ta có thể sử dung Scheduler để lập lịch cho hành động kiểm thử.
 
 Tiếp theo ta sẽ cần thêm một Sample vào Thread Group vừa tạo bằng cách chọn chuột phải vào Thread Group chọn Add và Sampler. Có rất nhiều Sampler để lựa chọn, với những mục đích test khác nhau thì ta sẽ chọn các Sampler phù hợp. Ở đây với mục đích là test trang web nên tôi chọn HTTP Request.
-<img src=http://i.imgur.com/vEm4MYs.png>
+<img src=>
 
 Các tham số của HTTP Request gồm:
 - Name: đặt tên request
@@ -149,7 +149,7 @@ Sau khi nhận được những Request thì Server sẽ gửi trả lại nhữ
 Một Listener cũng rất hữu ích đó là View Results Table. Listener này cung cấp một cái nhìn về các Sample đã được tạo ra dưới dạng bảng, ta có thể dễ dàng tìm thấy các thông tin như thời gian bắt đầu của các Sample (tính đến milisecond), dung lượng gói tin, độ trễ,…
 
 Các Listener tôi sử dụng:
-<img src=http://i.imgur.com/wMzcYEL.png>
+<img src=>
 
 ###### Chạy ứng dụng
 
@@ -165,18 +165,18 @@ Các thông số ta khai báo tương tự như đối với mục 3.3.1 nhưng 
 - CSV Data Set Config
 
 Đối với HTTP Request để Login vào trang web cần chú ý đến các Parameters. Các Parameters này cần điền giống như trang Login thật của website (các Parameters này có thể dùng addon Firebug trên trình duyệt FireFox để tìm)
-<img src=http://i.imgur.com/LU3Bvvm.png>
+<img src=>
 
 Với CSV Data Set Config trong Login HTTP Request ta cần khai báo đến file csv chứa các tài khoản dùng để đăng nhập vào trang web. Chi tiết như hình sau:
-<img src=http://i.imgur.com/Y0PvAaW.png>
+<img src=>
 
 Thêm các hành động sau khi Login thành công bằng cách tạo thêm các HTTP Request (danh mục, văn bản,...)
 
 Hành động liệt kê danh mục
-<img src=http://i.imgur.com/eRVhH2u.png>
+<img src=>
 
 Hành động liệt kê văn bản
-<img src=http://i.imgur.com/6CVuEg3.png>
+<img src=>
 
 ***CHÚ Ý***: Ta có thể giả lập số user kết nối vào website bằng cách thay đổi các tham biến trong Thread group element, không nhất thiết là chỉ có 10 user
 
@@ -188,7 +188,7 @@ Quan sát các kết quả thu được tại Listener.
 
 Summary Report
 
-<img src=http://i.imgur.com/waGvVbf.png>
+<img src=>
 
 ## Tài liệu tham khảo
 
