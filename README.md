@@ -172,11 +172,6 @@ Với CSV Data Set Config trong Login HTTP Request ta cần khai báo đến fil
 
 Thêm các hành động sau khi Login thành công bằng cách tạo thêm các HTTP Request (danh mục, văn bản,...)
 
-Hành động liệt kê danh mục
-<img src=>
-
-Hành động liệt kê văn bản
-<img src=>
 
 ***CHÚ Ý***: Ta có thể giả lập số user kết nối vào website bằng cách thay đổi các tham biến trong Thread group element, không nhất thiết là chỉ có 10 user
 
